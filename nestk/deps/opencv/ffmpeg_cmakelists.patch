@@ -1,0 +1,53 @@
+--- /c/Users/nburrus/Downloads/OpenCV-2.2.0/modules/ffmpeg/CMakeLists.txt	2010-12-19 02:19:23 +0100
++++ modules/ffmpeg/CMakeLists.txt	2010-12-19 11:25:26 +0100
+@@ -2,16 +2,16 @@
+ 
+ include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
+ include_directories(
+-    "${CMAKE_SOURCE_DIR}/3rdparty/include"
+-    "${CMAKE_SOURCE_DIR}/3rdparty/include/ffmpeg_"
++    "${OpenCV_SOURCE_DIR}/3rdparty/include"
++    "${OpenCV_SOURCE_DIR}/3rdparty/include/ffmpeg_"
+     )
+ include_directories(
+-    "${CMAKE_SOURCE_DIR}/modules/highgui/src"
+-    "${CMAKE_SOURCE_DIR}/modules/core/include"
+-    "${CMAKE_SOURCE_DIR}/modules/imgproc/include"
+-    "${CMAKE_SOURCE_DIR}/modules/highgui/include"
++    "${OpenCV_SOURCE_DIR}/modules/highgui/src"
++    "${OpenCV_SOURCE_DIR}/modules/core/include"
++    "${OpenCV_SOURCE_DIR}/modules/imgproc/include"
++    "${OpenCV_SOURCE_DIR}/modules/highgui/include"
+     )
+-link_directories("${CMAKE_SOURCE_DIR}/3rdparty/lib")
++link_directories("${OpenCV_SOURCE_DIR}/3rdparty/lib")
+ 
+ set(the_target opencv_ffmpeg)
+ add_library(${the_target} ffopencv.cpp ffopencv.h)
+@@ -24,17 +24,17 @@
+     #                  ${CMAKE_SOURCE_DIR}/3rdparty/lib/libgcc_.a
+     #                  ${CMAKE_SOURCE_DIR}/3rdparty/lib/libmingwex_.a)
+     if(WIN32 AND MINGW64)
+-        target_link_libraries(${the_target} ${CMAKE_SOURCE_DIR}/3rdparty/lib/libavformat64.a
+-                              ${CMAKE_SOURCE_DIR}/3rdparty/lib/libavcodec64.a
+-                              ${CMAKE_SOURCE_DIR}/3rdparty/lib/libavutil64.a
+-                              ${CMAKE_SOURCE_DIR}/3rdparty/lib/libswscale64.a
++        target_link_libraries(${the_target} ${OpenCV_SOURCE_DIR}/3rdparty/lib/libavformat64.a
++                              ${OpenCV_SOURCE_DIR}/3rdparty/lib/libavcodec64.a
++                              ${OpenCV_SOURCE_DIR}/3rdparty/lib/libavutil64.a
++                              ${OpenCV_SOURCE_DIR}/3rdparty/lib/libswscale64.a
+                               libws2_32.a)
+     else()
+-        target_link_libraries(${the_target} ${CMAKE_SOURCE_DIR}/3rdparty/lib/libavformat.a
+-                              ${CMAKE_SOURCE_DIR}/3rdparty/lib/libavcodec.a
+-                              ${CMAKE_SOURCE_DIR}/3rdparty/lib/libavutil.a
+-                              ${CMAKE_SOURCE_DIR}/3rdparty/lib/libswscale.a
+-                              ${CMAKE_SOURCE_DIR}/3rdparty/lib/libwsock32_.a)
++        target_link_libraries(${the_target} ${OpenCV_SOURCE_DIR}/3rdparty/lib/libavformat.a
++                              ${OpenCV_SOURCE_DIR}/3rdparty/lib/libavcodec.a
++                              ${OpenCV_SOURCE_DIR}/3rdparty/lib/libavutil.a
++                              ${OpenCV_SOURCE_DIR}/3rdparty/lib/libswscale.a
++                              ${OpenCV_SOURCE_DIR}/3rdparty/lib/libwsock32_.a)
+     endif()
+ endif ()
+ 
