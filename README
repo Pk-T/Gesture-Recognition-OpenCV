@@ -1,13 +1,7 @@
-Demo software to visualize, calibrate and process Kinect output
+The training images have been removed but the model which was created using the images is present in the Code directory.
+Software is written in Qt/C++ integrated with RGB Demo.
 
-This software was partly developed in the RoboticsLab
-http://roboticslab.uc3m.es and aims at providing a simple toolkit to
-start playing with Kinect data. Features include: * Grab kinect images
-and visualize / replay them * Calibrate the camera to get point clouds
-in metric space * Export to meshlab/blender using .ply files * Demo of
-3D scene reconstruction using a freehand Kinect * Demo of people
-detection and localization * Linux, MacOSX and (partial) Windows
-support
+RGBDemo is a software to visualize, calibrate and process Kinect output
 
 The code is based on the freenect library http://openkinect.org and
 OpenCV http://opencv.willowgarage.com .
@@ -18,10 +12,5 @@ nestk folder as a subfolder of your project and you should be able to
 start working with Kinect data. You can get a tutorial to get started
 there: http://nicolas.burrus.name/index.php/Research/KinectUseNestk .
 
-ROADMAP
-=======
-
-* OpenNI integration for skeleton tracking
-* Multiple Kinect support
-* GPU acceleration using OpenCL (partially done)
-* New demos!
+8 gestures are classified like:
+Waving, Leg movement, Hand sweep, Nodding etc
